@@ -1,0 +1,17 @@
+﻿@{ 
+    ViewBag.Title = "Home";
+}
+<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2
+            col-sm-10 col-sm-offset-1 col-xs-12 text-center">
+    <h2>We're going to have an exciting party!</h2>
+    <h3>And you are invited</h3>
+    <div class="text-center">
+        <div class="btn btn-success">
+            @Html.ActionLink("RSVP Now", "RsvpForm")
+        </div>
+        <div class="btn btn-success @(ViewBag.Responses > 0 ? "" : "disabled")">
+            @Html.ActionLink("Responses", "Responses")
+        </div>
+    </div>
+</div>
+

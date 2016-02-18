@@ -1,0 +1,33 @@
+﻿body {
+    background-color: #f1f1f1;
+}
+
+.panel {
+    margin-top: 1em;
+}
+
+#custom-button {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+form {
+    margin-top: 10px;
+}
+
+.field-validation-error {color: #f00;}
+.field-validation-valid {display: none;}
+.input-validation-error {border: 1px solid #f00;
+                         background-color: #fee;}
+.validation-summary-errors {font-weight: bold;
+                            color: #f00;}
+.validation-summary-valid {display: none;}

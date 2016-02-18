@@ -1,0 +1,37 @@
+﻿@model WebInviteOpdracht.Models.GuestResponse
+
+@{
+    ViewBag.Title = "Thanks";
+}
+<div class="panel panel-primary col-lg-6 col-lg-offset-3
+                                col-md-8 col-md-offset-2
+                                col-sm-10 col-sm-offset-1
+                                col-xs-12 text-center">
+    <h2>Thank you, @Model.Name!</h2>
+    <div class="lead">
+        @if (ViewBag.Added == true) {
+            if (Model.WillAttend == true) {
+                @:It's great that you are coming. The drinks are already in the fridge!
+                } else {
+                @:Sorry to hear that you can't make it, but thanks for letting us know.
+                }
+        } else {
+            @:<p class="text-primary">You have already submitted the RSVP form</p>
+        }
+    </div>
+    <div class="text-center" id="custom-button">
+        <button type="button" class="btn btn-primary">
+            @Html.ActionLink("Home", "Index")
+        </button>
+        @if (ViewBag.Added == false) {
+            using (Html.BeginForm("EditData", "Home", FormMethod.Post, null)) {
+                @Html.HiddenFor(x => x.Name)
+                @Html.HiddenFor(x => x.Email)
+                @Html.HiddenFor(x => x.Phone)
+                @Html.HiddenFor(x => x.WillAttend)
+                <input class="btn btn-primary" type="submit" value="Edit Data" />
+            }
+
+        }
+    </div>
+</div>
